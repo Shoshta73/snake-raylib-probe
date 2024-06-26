@@ -6,6 +6,7 @@
 #include "raylib.h"
 
 #include <cstdint>
+#include <deque>
 
 #pragma once
 
@@ -22,6 +23,7 @@ class Food
   public:
 	void Draw(void);
 	void GenerateRandomPosition(void);
+	void GenerateRandomPosition(const std::deque<Vector2>& snakeBody);
 
   public:
 	float x;
@@ -30,6 +32,9 @@ class Food
 
   public:
 	operator Vector2() const { return Vector2(x, y); }
+
+  private:
+	bool inSnakeBody(Vector2 pos, const std::deque<Vector2>& snakeBody) const;
 };
 } // namespace snake
 
