@@ -5,15 +5,15 @@
 
 #include "raylib.h"
 
-#define SCREEN_WIDTH 800
-#define SCREEN_HEIGHT 600
+#define CELL_SIZE 20
+#define CELLS_COUNT 40
 
 Color green = { 173, 204, 96, 255 };
 
 int
 main(void)
 {
-	InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "Snake");
+	InitWindow(CELL_SIZE * CELLS_COUNT, CELL_SIZE * CELLS_COUNT, "Snake");
 
 #if DEBUG
 	SetExitKey(KEY_NULL);
