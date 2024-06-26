@@ -25,6 +25,7 @@ class Food
   public:
 	uint8_t x;
 	uint8_t y;
+	Texture2D texture;
 };
 } // namespace snake
 

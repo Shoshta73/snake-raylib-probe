@@ -12,8 +12,13 @@
 
 #define CELL_SIZE 20
 #define CELLS_COUNT 40
+#define REAL_COORD(x) ((x) * CELL_SIZE)
 
 static Color green = { 173, 204, 96, 255 };
 static Color darkGreen = { 43, 51, 24, 255 };
+
+#if DEBUG
+#define FOOD_IMAGE "assets/foods/Food_0.png"
+#endif
 
 #endif

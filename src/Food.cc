@@ -13,17 +13,22 @@ Food::Food()
 {
 	x = CELLS_COUNT / 2;
 	y = CELLS_COUNT / 2;
+
+	Image image = LoadImage(FOOD_IMAGE);
+	ImageResize(&image, CELL_SIZE, CELL_SIZE);
+	this->texture = LoadTextureFromImage(image);
+	UnloadImage(image);
 }
 
 Food::~Food()
 {
-	// Nothing to do.
+	UnloadTexture(this->texture);
 }
 
 void
 Food::Draw(void)
 {
-	DrawRectangle(x * CELL_SIZE, y * CELL_SIZE, CELL_SIZE, CELL_SIZE, RED);
+	DrawTexture(this->texture, REAL_COORD(this->x), REAL_COORD(this->y), WHITE);
 }
 
 }

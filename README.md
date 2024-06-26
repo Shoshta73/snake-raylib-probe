@@ -35,3 +35,7 @@ and then run the executable:
 ### Libraries
 
 -   [raylib](https://www.raylib.com/)
+
+### Assets
+
+-   [Food Icons](https://janbarboza.itch.io/foods-potions-and-coins)
