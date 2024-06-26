@@ -4,6 +4,7 @@
 // https://opensource.org/licenses/MIT
 
 #include "Food.hh"
+#include "Snake.hh"
 #include "defines.hh"
 
 #include "raylib.h"
@@ -20,10 +21,12 @@ main(void)
 	SetTargetFPS(60);
 
 	Food food = Food();
+	Snake snake = Snake();
 	while (!WindowShouldClose()) {
 		BeginDrawing();
 		ClearBackground(green);
 		food.Draw();
+		snake.Draw();
 		EndDrawing();
 	}
 	CloseWindow();
