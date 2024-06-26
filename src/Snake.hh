@@ -20,7 +20,7 @@ class Snake
 
   public:
 	std::deque<Vector2> body;
-	Vector2 direction = Vector2(1, 0);
+	Vector2 direction;
 
   public:
 	void Draw();

@@ -15,6 +15,22 @@ namespace snake {
 
 Snake::Snake()
 {
+	int initialDir = GetRandomValue(0, 3);
+	switch (initialDir) {
+		case 0: // up
+			direction = { 0, -1 };
+			break;
+		case 1: // right
+			direction = { 1, 0 };
+			break;
+		case 2: // down
+			direction = { 0, 1 };
+			break;
+		case 3: // left
+			direction = { -1, 0 };
+			break;
+	}
+
 	int initalLength = GetRandomValue(1, MAX_STARTING_LENGTH);
 	int initial_x = GetRandomValue(0 + initalLength, CELLS_COUNT - 1 - initalLength);
 	int initial_y = GetRandomValue(0 + initalLength, CELLS_COUNT - 1 - initalLength);
