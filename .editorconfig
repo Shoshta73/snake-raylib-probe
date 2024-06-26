@@ -11,3 +11,6 @@ insert_final_newline = true
 
 [*.md]
 trim_trailing_whitespace = false
+
+[*.{cc,hh,cpp,hpp,cxx,hxx,h++,c++,tcc,inl,ipp}]
+indent_style = tab
