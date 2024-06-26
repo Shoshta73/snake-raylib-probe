@@ -24,6 +24,9 @@ main(void)
 	Snake snake = Snake();
 	while (!WindowShouldClose()) {
 		BeginDrawing();
+
+		snake.Update();
+
 		ClearBackground(green);
 		food.Draw();
 		snake.Draw();

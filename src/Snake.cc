@@ -7,6 +7,8 @@
 
 #include "defines.hh"
 
+#include <raymath.h>
+
 #include <cstdint>
 
 namespace snake {
@@ -30,6 +32,13 @@ Snake::Draw()
 		Rectangle segment = Rectangle(REAL_COORD(bp.x), REAL_COORD(bp.y), CELL_SIZE, CELL_SIZE);
 		DrawRectangleRounded(segment, 0.5, 6, darkGreen);
 	}
+}
+
+void
+Snake::Update()
+{
+	body.pop_back();
+	body.push_front(Vector2Add(body[0], this->direction));
 }
 
 }
