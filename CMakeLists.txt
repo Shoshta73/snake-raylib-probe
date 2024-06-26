@@ -21,6 +21,10 @@ elseif(CMAKE_BUILD_TYPE STREQUAL Release)
     add_compile_definitions(RELEASE=1)
 endif()
 
+add_subdirectory(vendor/raylib)
+
 set (SNAKE_SRC src/main.cc)
 
 add_executable(${PROJECT_NAME} ${SNAKE_SRC})
+add_dependencies(${PROJECT_NAME} raylib)
+target_link_libraries(${PROJECT_NAME} raylib)

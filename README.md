@@ -29,3 +29,9 @@ and then run the executable:
 ```bash
 ./snake
 ```
+
+## Acknowledgments and Attributions
+
+### Libraries
+
+-   [raylib](https://www.raylib.com/)
