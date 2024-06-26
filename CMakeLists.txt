@@ -23,7 +23,7 @@ endif()
 
 add_subdirectory(vendor/raylib)
 
-set (SNAKE_SRC src/main.cc src/Food.cc src/Snake.cc)
+set (SNAKE_SRC src/main.cc src/Food.cc src/Snake.cc src/Game.cc)
 
 add_executable(${PROJECT_NAME} ${SNAKE_SRC})
 add_dependencies(${PROJECT_NAME} raylib)
