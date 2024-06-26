@@ -23,9 +23,12 @@ class Food
 	void Draw(void);
 
   public:
-	uint8_t x;
-	uint8_t y;
+	float x;
+	float y;
 	Texture2D texture;
+
+  public:
+	operator Vector2() const { return Vector2(x, y); }
 };
 } // namespace snake
 
