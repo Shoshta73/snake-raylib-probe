@@ -9,6 +9,19 @@
 
 #include "raylib.h"
 
+double lastUpdateTime = 0.0;
+
+bool
+eventTriggered(double interval)
+{
+	double curr = GetTime();
+	if (curr - lastUpdateTime >= interval) {
+		lastUpdateTime = curr;
+		return true;
+	}
+	return false;
+}
+
 using namespace snake;
 
 int
@@ -25,7 +38,9 @@ main(void)
 	while (!WindowShouldClose()) {
 		BeginDrawing();
 
-		snake.Update();
+		if (eventTriggered(INTERVAL)) {
+			snake.Update();
+		}
 
 		ClearBackground(green);
 		food.Draw();
