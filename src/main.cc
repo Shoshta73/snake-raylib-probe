@@ -25,15 +25,6 @@ main(void)
 
 		game.Update();
 
-		if ((IsKeyPressed(KEY_UP) || IsKeyPressed(KEY_W) || IsKeyPressed(KEY_KP_8)) && game.snake.direction.y != 1)
-			game.snake.direction = { 0, -1 };
-		if ((IsKeyPressed(KEY_DOWN) || IsKeyPressed(KEY_S) || IsKeyPressed(KEY_KP_2)) && game.snake.direction.y != -1)
-			game.snake.direction = { 0, 1 };
-		if ((IsKeyPressed(KEY_LEFT) || IsKeyPressed(KEY_A) || IsKeyPressed(KEY_KP_4)) && game.snake.direction.x != 1)
-			game.snake.direction = { -1, 0 };
-		if ((IsKeyPressed(KEY_RIGHT) || IsKeyPressed(KEY_D) || IsKeyPressed(KEY_KP_6)) && game.snake.direction.x != -1)
-			game.snake.direction = { 1, 0 };
-
 		ClearBackground(green);
 
 		game.Draw();

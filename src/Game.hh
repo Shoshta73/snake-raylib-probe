@@ -32,6 +32,7 @@ class Game
 
   private:
 	bool shouldUpdate();
+	void handleInput();
 };
 
 }
