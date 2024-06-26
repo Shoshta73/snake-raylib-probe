@@ -13,6 +13,7 @@
 #define CELL_SIZE 20
 #define CELLS_COUNT 40
 #define REAL_COORD(x) ((x) * CELL_SIZE)
+#define MAX_STARTING_LENGTH 10
 
 static Color green = { 173, 204, 96, 255 };
 static Color darkGreen = { 43, 51, 24, 255 };

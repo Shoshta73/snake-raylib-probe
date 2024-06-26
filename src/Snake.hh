@@ -19,7 +19,7 @@ class Snake
 	~Snake();
 
   public:
-	std::deque<Vector2> body = { { 5, 6 }, { 4, 6 }, { 3, 6 } };
+	std::deque<Vector2> body;
 
   public:
 	void Draw();

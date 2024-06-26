@@ -7,9 +7,19 @@
 
 #include "defines.hh"
 
+#include <cstdint>
+
 namespace snake {
 
-Snake::Snake() {}
+Snake::Snake()
+{
+	int initalLength = GetRandomValue(1, MAX_STARTING_LENGTH);
+	int initial_x = GetRandomValue(0 + initalLength, CELLS_COUNT - 1 - initalLength);
+	int initial_y = GetRandomValue(0 + initalLength, CELLS_COUNT - 1 - initalLength);
+	for (uint8_t i = 0; i < initalLength; i++) {
+		body.push_back(Vector2(initial_x - i, initial_y));
+	}
+}
 
 Snake::~Snake() {}
 
