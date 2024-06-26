@@ -15,7 +15,7 @@ int
 main(void)
 {
 	InitWindow(CELL_SIZE * CELLS_COUNT, CELL_SIZE * CELLS_COUNT, "Snake");
-#if DEBUG
+#if !DEBUG
 	SetExitKey(KEY_NULL);
 #endif
 	SetTargetFPS(60);

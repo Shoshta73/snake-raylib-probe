@@ -17,7 +17,8 @@ void
 Snake::Draw()
 {
 	for (auto& bp : body) {
-		DrawRectangle(REAL_COORD(bp.x), REAL_COORD(bp.y), CELL_SIZE, CELL_SIZE, darkGreen);
+		Rectangle segment = Rectangle(REAL_COORD(bp.x), REAL_COORD(bp.y), CELL_SIZE, CELL_SIZE);
+		DrawRectangleRounded(segment, 0.5, 6, darkGreen);
 	}
 }
 
