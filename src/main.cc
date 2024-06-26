@@ -3,12 +3,9 @@
 // This software is released under the MIT License.
 // https://opensource.org/licenses/MIT
 
+#include "defines.hh"
+
 #include "raylib.h"
-
-#define CELL_SIZE 20
-#define CELLS_COUNT 40
-
-Color green = { 173, 204, 96, 255 };
 
 int
 main(void)
