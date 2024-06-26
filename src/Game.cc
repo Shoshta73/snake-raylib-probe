@@ -4,6 +4,7 @@
 // https://opensource.org/licenses/MIT
 
 #include "Game.hh"
+#include "defines.hh"
 namespace snake {
 
 Game::Game()
@@ -24,7 +25,19 @@ Game::Draw()
 void
 Game::Update()
 {
-	this->snake.Update();
+	if (shouldUpdate())
+		this->snake.Update();
+}
+
+bool
+Game::shouldUpdate()
+{
+	double curr = GetTime();
+	if (curr - this->lastUpdateTime >= INTERVAL) {
+		this->lastUpdateTime = curr;
+		return true;
+	}
+	return false;
 }
 
 } // namespace snake

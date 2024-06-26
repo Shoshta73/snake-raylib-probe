@@ -3,25 +3,10 @@
 // This software is released under the MIT License.
 // https://opensource.org/licenses/MIT
 
-#include "Food.hh"
 #include "Game.hh"
-#include "Snake.hh"
 #include "defines.hh"
 
 #include "raylib.h"
-
-double lastUpdateTime = 0.0;
-
-bool
-eventTriggered(double interval)
-{
-	double curr = GetTime();
-	if (curr - lastUpdateTime >= interval) {
-		lastUpdateTime = curr;
-		return true;
-	}
-	return false;
-}
 
 using namespace snake;
 
@@ -38,9 +23,7 @@ main(void)
 	while (!WindowShouldClose()) {
 		BeginDrawing();
 
-		if (eventTriggered(INTERVAL)) {
-			game.snake.Update();
-		}
+		game.Update();
 
 		if ((IsKeyPressed(KEY_UP) || IsKeyPressed(KEY_W) || IsKeyPressed(KEY_KP_8)) && game.snake.direction.y != 1)
 			game.snake.direction = { 0, -1 };

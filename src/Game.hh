@@ -26,6 +26,12 @@ class Game
   public:
 	void Draw();
 	void Update();
+
+  private:
+	double lastUpdateTime = 0.0;
+
+  private:
+	bool shouldUpdate();
 };
 
 }
