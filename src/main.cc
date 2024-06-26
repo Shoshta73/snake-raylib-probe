@@ -42,18 +42,14 @@ main(void)
 			snake.Update();
 		}
 
-		if (IsKeyPressed(KEY_UP) || IsKeyPressed(KEY_W) || IsKeyPressed(KEY_KP_8)) {
+		if ((IsKeyPressed(KEY_UP) || IsKeyPressed(KEY_W) || IsKeyPressed(KEY_KP_8)) && snake.direction.y != 1)
 			snake.direction = { 0, -1 };
-		}
-		if (IsKeyPressed(KEY_DOWN) || IsKeyPressed(KEY_S) || IsKeyPressed(KEY_KP_2)) {
+		if ((IsKeyPressed(KEY_DOWN) || IsKeyPressed(KEY_S) || IsKeyPressed(KEY_KP_2)) && snake.direction.y != -1)
 			snake.direction = { 0, 1 };
-		}
-		if (IsKeyPressed(KEY_LEFT) || IsKeyPressed(KEY_A) || IsKeyPressed(KEY_KP_4)) {
+		if ((IsKeyPressed(KEY_LEFT) || IsKeyPressed(KEY_A) || IsKeyPressed(KEY_KP_4)) && snake.direction.x != 1)
 			snake.direction = { -1, 0 };
-		}
-		if (IsKeyPressed(KEY_RIGHT) || IsKeyPressed(KEY_D) || IsKeyPressed(KEY_KP_6)) {
+		if ((IsKeyPressed(KEY_RIGHT) || IsKeyPressed(KEY_D) || IsKeyPressed(KEY_KP_6)) && snake.direction.x != -1)
 			snake.direction = { 1, 0 };
-		}
 
 		ClearBackground(green);
 
