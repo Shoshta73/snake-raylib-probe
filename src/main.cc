@@ -8,6 +8,8 @@
 #define SCREEN_WIDTH 800
 #define SCREEN_HEIGHT 600
 
+Color green = { 173, 204, 96, 255 };
+
 int
 main(void)
 {
@@ -20,8 +22,7 @@ main(void)
 	SetTargetFPS(60);
 	while (!WindowShouldClose()) {
 		BeginDrawing();
-		ClearBackground(RAYWHITE);
-		DrawText("Le snake", 190, 200, 20, LIGHTGRAY);
+		ClearBackground(green);
 		EndDrawing();
 	}
 	CloseWindow();
