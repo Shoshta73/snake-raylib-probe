@@ -11,8 +11,8 @@ namespace snake {
 
 Food::Food()
 {
-	x = CELLS_COUNT / 2;
-	y = CELLS_COUNT / 2;
+	this->x = GetRandomValue(0, CELLS_COUNT - 1);
+	this->y = GetRandomValue(0, CELLS_COUNT - 1);
 
 	Image image = LoadImage(FOOD_IMAGE);
 	ImageResize(&image, CELL_SIZE, CELL_SIZE);
