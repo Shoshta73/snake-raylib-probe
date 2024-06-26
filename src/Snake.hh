@@ -21,6 +21,7 @@ class Snake
   public:
 	std::deque<Vector2> body;
 	Vector2 direction;
+	bool addSegment = false;
 
   public:
 	void Draw();

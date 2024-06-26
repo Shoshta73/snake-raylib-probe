@@ -59,8 +59,12 @@ Snake::Draw()
 void
 Snake::Update()
 {
-	body.pop_back();
-	body.push_front(Vector2Add(body[0], this->direction));
+	this->body.push_front(Vector2Add(this->body[0], this->direction));
+	if (this->addSegment) {
+		this->addSegment = false;
+	} else {
+		this->body.pop_back();
+	}
 }
 
 }

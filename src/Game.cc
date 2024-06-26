@@ -61,6 +61,7 @@ Game::checkFoodCollision()
 {
 	if (Vector2Equals(this->snake.body[0], this->food)) {
 		this->food.GenerateRandomPosition(this->snake.body);
+		this->snake.addSegment = true;
 	}
 }
 
