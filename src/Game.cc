@@ -7,11 +7,7 @@
 #include "defines.hh"
 namespace snake {
 
-Game::Game()
-{
-	this->food = Food();
-	this->snake = Snake();
-}
+Game::Game() {}
 
 Game::~Game() {}
 
