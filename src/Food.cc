@@ -11,12 +11,11 @@ namespace snake {
 
 Food::Food()
 {
-	this->x = GetRandomValue(0, CELLS_COUNT - 1);
-	this->y = GetRandomValue(0, CELLS_COUNT - 1);
-
+	this->GenerateRandomPosition();
 	Image image = LoadImage(FOOD_IMAGE);
 	ImageResize(&image, CELL_SIZE, CELL_SIZE);
 	this->texture = LoadTextureFromImage(image);
+
 	UnloadImage(image);
 }
 
@@ -30,5 +29,11 @@ Food::Draw(void)
 {
 	DrawTexture(this->texture, REAL_COORD(this->x), REAL_COORD(this->y), WHITE);
 }
+
+void
+Food::GenerateRandomPosition(void)
+{
+}
+
 
 }

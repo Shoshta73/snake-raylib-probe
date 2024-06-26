@@ -21,6 +21,7 @@ class Food
 
   public:
 	void Draw(void);
+	void GenerateRandomPosition(void);
 
   public:
 	float x;

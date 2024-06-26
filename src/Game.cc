@@ -4,7 +4,10 @@
 // https://opensource.org/licenses/MIT
 
 #include "Game.hh"
+
 #include "defines.hh"
+
+#include "raymath.h"
 namespace snake {
 
 Game::Game() {}
@@ -23,6 +26,8 @@ Game::Update()
 {
 	if (shouldUpdate())
 		this->snake.Update();
+
+	this->checkFoodCollision();
 
 	this->handleInput();
 }
@@ -49,6 +54,14 @@ Game::handleInput()
 		this->snake.direction = { -1, 0 };
 	if ((IsKeyPressed(KEY_RIGHT) || IsKeyPressed(KEY_D) || IsKeyPressed(KEY_KP_6)) && this->snake.direction.x != -1)
 		this->snake.direction = { 1, 0 };
+}
+
+void
+Game::checkFoodCollision()
+{
+	if (Vector2Equals(this->snake.body[0], this->food)) {
+		this->food.GenerateRandomPosition();
+	}
 }
 
 } // namespace snake

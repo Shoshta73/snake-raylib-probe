@@ -31,6 +31,7 @@ class Game
   private:
 	bool shouldUpdate();
 	void handleInput();
+	void checkFoodCollision();
 };
 
 }
