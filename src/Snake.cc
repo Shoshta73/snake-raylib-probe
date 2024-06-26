@@ -16,26 +16,32 @@ namespace snake {
 Snake::Snake()
 {
 	int initialDir = GetRandomValue(0, 3);
-	switch (initialDir) {
-		case 0: // up
-			direction = { 0, -1 };
-			break;
-		case 1: // right
-			direction = { 1, 0 };
-			break;
-		case 2: // down
-			direction = { 0, 1 };
-			break;
-		case 3: // left
-			direction = { -1, 0 };
-			break;
-	}
 
 	int initalLength = GetRandomValue(1, MAX_STARTING_LENGTH);
 	int initial_x = GetRandomValue(0 + initalLength, CELLS_COUNT - 1 - initalLength);
 	int initial_y = GetRandomValue(0 + initalLength, CELLS_COUNT - 1 - initalLength);
-	for (uint8_t i = 0; i < initalLength; i++) {
-		body.push_back(Vector2(initial_x - i, initial_y));
+
+	switch (initialDir) {
+		case 0: // up
+			direction = { 0, -1 };
+			for (uint8_t i = 0; i < initalLength; i++)
+				body.push_back(Vector2(initial_x, initial_y + i));
+			break;
+		case 1: // right
+			direction = { 1, 0 };
+			for (uint8_t i = 0; i < initalLength; i++)
+				body.push_back(Vector2(initial_x - i, initial_y));
+			break;
+		case 2: // down
+			direction = { 0, 1 };
+			for (uint8_t i = 0; i < initalLength; i++)
+				body.push_back(Vector2(initial_x, initial_y - i));
+			break;
+		case 3: // left
+			direction = { -1, 0 };
+			for (uint8_t i = 0; i < initalLength; i++)
+				body.push_back(Vector2(initial_x + i, initial_y));
+			break;
 	}
 }
 
