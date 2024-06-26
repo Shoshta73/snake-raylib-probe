@@ -20,14 +20,12 @@ class Game
 	~Game();
 
   public:
-	Snake snake;
-	Food food;
-
-  public:
 	void Draw();
 	void Update();
 
   private:
+	Snake snake;
+	Food food;
 	double lastUpdateTime = 0.0;
 
   private:
