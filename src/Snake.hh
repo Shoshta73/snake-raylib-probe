@@ -3,6 +3,7 @@
 // This software is released under the MIT License.
 // https://opensource.org/licenses/MIT
 
+#include "defines.hh"
 #include <deque>
 #include <raylib.h>
 
@@ -26,6 +27,7 @@ class Snake
   public:
 	void Draw();
 	void Update();
+	void Reset();
 };
 
 }

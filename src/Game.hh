@@ -27,11 +27,14 @@ class Game
 	Snake snake;
 	Food food;
 	double lastUpdateTime = 0.0;
+	bool running = true;
 
   private:
 	bool shouldUpdate();
 	void handleInput();
 	void checkFoodCollision();
+	void checkSnakeTailCollision();
+	void gameOver();
 };
 
 }
