@@ -79,6 +79,7 @@ Snake::Update()
 void
 Snake::Reset()
 {
+	this->body.clear();
 	int initalLength = GetRandomValue(1, MAX_STARTING_LENGTH);
 
 	int initial_x = GetRandomValue(0 + initalLength, CELLS_COUNT - 1 - initalLength);
