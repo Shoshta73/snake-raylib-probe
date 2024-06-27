@@ -13,7 +13,7 @@
 #define CELL_SIZE 20
 #define CELLS_COUNT 40
 #define REAL_COORD(x) ((x) * CELL_SIZE)
-#define MAX_STARTING_LENGTH 10
+#define MAX_STARTING_LENGTH 3
 
 #define INTERVAL 0.5
 
