@@ -59,7 +59,19 @@ Snake::Draw()
 void
 Snake::Update()
 {
-	this->body.push_front(Vector2Add(this->body[0], this->direction));
+	Vector2 newHeadPos = Vector2Add(this->body[0], this->direction);
+
+	if (newHeadPos.x < 0 && this->direction.x == -1)
+		newHeadPos.x = CELLS_COUNT - 1;
+	if (newHeadPos.x > CELLS_COUNT - 1 && this->direction.x == 1)
+		newHeadPos.x = 0;
+	if (newHeadPos.y < 0 && this->direction.y == -1)
+		newHeadPos.y = CELLS_COUNT - 1;
+	if (newHeadPos.y > CELLS_COUNT - 1 && this->direction.y == 1)
+		newHeadPos.y = 0;
+
+	this->body.push_front(newHeadPos);
+
 	if (this->addSegment) {
 		this->addSegment = false;
 	} else {

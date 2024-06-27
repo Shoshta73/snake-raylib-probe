@@ -27,6 +27,7 @@ class Snake
 	void Draw();
 	void Update();
 };
+
 }
 
 #endif
